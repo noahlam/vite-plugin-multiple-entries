@@ -1,0 +1,44 @@
+{
+    "name": "vite-plugin-multiple-entries",
+    "version": "0.0.1",
+    "description": "Support multiple entries in an html file",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "engines": {
+        "node": ">=14.0.0",
+        "pnpm": ">=7.0.1"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist",
+        "types",
+        "README.md"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "pnpm clean && tsc",
+        "prepublish": "pnpm build",
+        "dev:demo": "cd demo && vite",
+        "build:demo": "cd demo && vite build",
+        "preview:demo": "cd demo && vite preview"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.19",
+        "typescript": "^5.3.3",
+        "rollup": "^4.12.0",
+        "vite": "^4.3.9"
+    },
+    "repository": {
+        "type": "https",
+        "url": "https://github.com/noahlam/vite-plugin-multiple-entries.git"
+    },
+    "author": "284516433@qq.com",
+    "license": "MIT"
+}

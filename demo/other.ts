@@ -1,0 +1,1 @@
+console.log('output in other.ts');
